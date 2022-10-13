@@ -1,0 +1,18 @@
+Description: switch upstream test from ava to tape
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2019-09-25
+
+--- a/test.js
++++ b/test.js
+@@ -1,7 +1,8 @@
+-import test from 'ava';
+-import binaryExtensions from '.';
++const test =require('tape');
++const binaryExtensions = require('.');
+ 
+ test('main', t => {
+ 	t.true(Array.isArray(binaryExtensions));
+ 	t.true(binaryExtensions.length > 0);
++	t.end();
+ });
